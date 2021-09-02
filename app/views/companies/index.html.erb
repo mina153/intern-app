@@ -14,29 +14,28 @@
 
     </div>
    
-  
+ 
         <% @companies.each do |company| %>
           <ul>
             <li class='list'> 
          
-              <ul class="more_list">
+              <%# <ul class="more_list">
                 <li>
                   <%= link_to '詳細', user_company_path(company.id), method: :get %>
-                </li>
+                <%# </li>
                 <% if user_signed_in? %>  
-                  <% if current_user== company.user %>
-                    <li>
-                      <%= link_to '編集', edit_user_company_path(company.id), method: :get %>
-                    </li>
-                    <li>
+                  <%# <% if current_user== company.user %>
+                    <%# <li> %>
+                      <%# <%= link_to '編集', edit_user_company_path(company.id), method: :get
+                    </li> %> 
+                    <%# <li>
                       <%= link_to '削除', user_company_path(company.id), method: :delete %>
-                    </li>
-                  <% end %>
-                <% end %>
-              </ul>
-              <%= link_to user_company_path(company.id) do %>
-             
-          
+                    <%# </li> %>
+                  <%# <% end %>  
+                <%# <% end %>
+              <%# </ul> %> 
+              <%# <%= link_to user_company_path(company.id) do %> 
+           
             
                       <div class='intern-info'>
                         <h3 class='company-name'>
@@ -50,7 +49,7 @@
                       </div>  
             </li>
           </ul>
-        <% end %>   
+        <% end %>    
 
     <div class="entry_form">
       <%= link_to ' + New Plan', new_user_company_path(current_user) %>
