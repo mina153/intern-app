@@ -1,0 +1,41 @@
+ul{
+  list-style: none;
+}
+
+.list{
+  border: 1px solid black;
+  width: 70%;
+}
+.company-date{
+  border:1px solid black;
+}
+.entry_form{
+  margin-top: 50px;
+}
+
+.logout{
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+
+h2{
+  margin-bottom: 50px;
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+
+}
+
+.login{
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.sign-up{
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+}

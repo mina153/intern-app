@@ -1,0 +1,60 @@
+<div class="companies-contents">
+
+  <div class="companies-main">
+    <h3 class="companies-title">Fill out the company's information</h3>
+    <%= form_with model: @companies , url: user_companies_path, local: true do |f| %>
+  
+      <%# 会社名とインターンの説明 %>
+      <div class="new-companies">
+        <div class="weight-bold-text">
+          company's name
+          <span class="indispensable"> necessary </span>
+        </div>
+        <%= f.text_area :company_name, class:"companies-text", id:"company-name", placeholder:"company's name" %>
+        <div class="companies-explain">
+          <div class="weight-bold-text">
+            internship's explanation 
+            <span class="indispensable"> necessary </span>
+          </div>
+          <%= f.text_area :explanation, class:"companies-text", id:"company-info", placeholder:"explanation (ex: details of the company, company's URL...etc)" %>
+        </div>
+      </div>
+      <%# /会社名とインターンの説明 %>
+
+      <%# インターンの日程 %>
+      <div class="intern-date">
+        <label class="weight-bold-text">date of internship</label>
+        <span class="indispensable">  neccesary  </span>
+      </div>
+      <div class='input-birth-wrap'>
+        <%= raw sprintf(
+                    f.date_select(
+                      :date,
+                      class:'select-date',
+                      id:"date",
+                      use_month_numbers: true,
+                      prompt:'--',
+                      start_year: 2021,
+                      end_year: (Time.now.year + 10 ),
+                      date_separator: '%s'),
+                    "<p> year </p>", "<p> month </p>") + "<p> th </p>" %>
+      </div>
+
+      
+      
+      <%# /商品の詳細 %>
+
+      <%# 下部ボタン %>
+      <div class="companies-btn-contents">
+        <%= f.submit "+ Make Plan" ,class:"company-btn" %>
+        <p>
+        <%=link_to '⇨ back to MyPage', user_path(current_user), class:"back-btn" %>
+        </p>
+      </div>
+      <%# /下部ボタン %>
+    
+    
+
+    <% end %>
+  </div>
+</div>

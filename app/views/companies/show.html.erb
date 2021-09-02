@@ -1,0 +1,36 @@
+<%# インターンの概要 %>
+<div class="intern-show">
+  <div class="intern-box">
+    <h2 class="intern">
+        <%= @companies.company_name %>
+    </h2>
+
+            <% if user_signed_in? %>  
+              <% if current_user== @companies.user %>
+                <%= link_to "編集", edit_user_company_path(@companies.id), method: :get, class: "intern-red-btn" %>
+                <p class="or-text">or</p>
+                <%= link_to "削除", user_company_path(@companies.id), method: :delete, class:"intern-destroy" %>
+              <% end %> 
+            <% end %>  
+         
+     
+    <div class="intern-explain-box">
+      <span><%= @companies.company_name %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-intern">internship's explanation</th>
+          <td class="detail-value"><%= @companies.explanation %></td>
+        </tr>
+        <tr>
+          <th class="detail-intern">date of internship</th>
+          <td class="detail-value"><%= @companies.date.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%# /インターンの概要 %>
+
+  
+</div>
