@@ -4,6 +4,4 @@ class Company < ApplicationRecord
   validates :company_name, presence:true
   validates :explanation, presence: true
   validates :date, presence: true
-
-
 end

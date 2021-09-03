@@ -7,6 +7,7 @@ class CreateCompanies < ActiveRecord::Migration[6.0]
       t.string :my_password, null: false
       t.date :date, null: false
       t.references :user, null: false, foreign_key: true
+      t.text :line
       t.timestamps
     end
   end

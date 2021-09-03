@@ -9,23 +9,30 @@
       <%# 会社名とインターンの説明 %>
       <div class="new-companies">
         <div class="weight-bold-text">
-          company's name
+          <strong>company's name</strong>
           <span class="indispensable"> necessary </span>
         </div>
         <%= f.text_area :company_name, class:"companies-text", id:"company-name", placeholder:"company's name" %>
         <div class="companies-explain">
           <div class="weight-bold-text">
-            internship's explanation 
+            <strong>internship's explanation</strong>
             <span class="indispensable"> necessary </span>
           </div>
           <%= f.text_area :explanation, class:"companies-text", id:"company-info", placeholder:"explanation (ex: details of the company, company's URL...etc)" %>
+        </div>
+        <div class="companies-url">
+          <div class="weight-bold-text">
+            <strong>URL</strong>
+            <span class="indispensably"> optional </span>
+          </div>
+          <%= f.text_area :url, class:"companies-text", id:"company-name", placeholder:"company's url" %>
         </div>
       </div>
       <%# /会社名とインターンの説明 %>
 
       <%# インターンの日程 %>
       <div class="intern-date">
-        <label class="weight-bold-text">date of internship</label>
+        <strong><label class="weight-bold-text">date of internship</label></strong>
         <span class="indispensable">  neccesary  </span>
       </div>
       <div class='input-birth-wrap'>
