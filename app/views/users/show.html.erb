@@ -4,31 +4,73 @@
   </div><br>
   <div class="Account__info">
     <% if user_signed_in? %>
-      <h2> 🌱🌱 Welcome back to <%= link_to current_user.name, "#", class: "user-name" %> page 🐾🐾  </h2> 
+      <h2> 🌱🌱 Welcome back to <%= link_to current_user.name, "#", class: "user-name" %>'s page 🐾🐾  </h2> 
     <% end %>
   </div>
  
+  <div class='intern-contents'>
+    <div class="Company__info">
+      <h3> <<< Check <b><%= link_to current_user.name, "#" %></b>'s plan >>> </h3>
 
-  <div class="Company__info">
-    <h3> <<< Check <b><%= link_to current_user.name, "#" %></b>'s plan >>> </h3>
+    </div>
+   
+ 
+        <% @companies.each do |company| %>
+          <ul>
+            <li class='list'> 
+         
+              <%# <ul class="more_list">
+                <li>
+                  <%= link_to '詳細', user_company_path(company.id), method: :get %>
+                <%# </li>
+                <% if user_signed_in? %>  
+                  <%# <% if current_user== company.user %>
+                    <%# <li> %>
+                      <%# <%= link_to '編集', edit_user_company_path(company.id), method: :get
+                    </li> %> 
+                    <%# <li>
+                      <%= link_to '削除', user_company_path(company.id), method: :delete %>
+                    <%# </li> %>
+                  <%# <% end %>  
+                <%# <% end %>
+              <%# </ul> %> 
+              <%# <%= link_to user_company_path(company.id) do %> 
+           
+            
+                      <div class='intern-info'>
+                        <h3 class='company-name'>
+                          <%= company.company_name %>    
+                      
+                        </h3>
+
+                        <div class='company-date'>
+                          <span><%= company.date %></span> 
+                        </div> 
+                      </div>  
+            </li>
+          </ul>
+        <% end %>    
+
+    <div class="entry_form">
+      <%= link_to ' + New Plan', new_user_company_path(current_user) %>
+    </div>
 
   </div>
-  <div class="entry_form">
-    <%= link_to ' + New Plan', new_user_company_path(current_user) %>
-  </div>
-  
-  <div class="Account_link">
-    <% if user_signed_in? %>
-      <p>
-      <%= link_to '⇨ ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
-      </p>
-    <% else %>
-      <ul>
-      <li><%= link_to '⇩ ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '⇩ 新規登録', new_user_registration_path, class: "sign-up" %></li>
-      </ul>
-    <% end %>
-  </div>
+  <%# /商品一覧 %>
+
+
+    <div class="Account_link">
+      <% if user_signed_in? %>
+        <p>
+        <%= link_to '⇨ ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+        </p>
+      <% else %>
+        <ul>
+        <li><%= link_to '⇩ ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '⇩ 新規登録', new_user_registration_path, class: "sign-up" %></li>
+        </ul>
+      <% end %>
+    </div>
 </div>
 
 

@@ -1,9 +1,22 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :move, only: [:show]
   
     def show
+      @companies = Company.all.order("created_at DESC")
     end
     
+
+    private
+
+    def company_params
+      params.permit(:company_name, :explanation, :date).merge(user_id: current_user.id)
+    end
+
+  
+    def move 
+      @company = Company.find(params[:id])
+    end
 end
 
 
