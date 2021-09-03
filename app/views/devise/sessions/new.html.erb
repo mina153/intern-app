@@ -1,6 +1,6 @@
 <div class="AccountPage">
   <div class="AccountPage__title">
-    <h1>ログインページ</h1>
+    <h1>Log In</h1>
     <%= render "devise/shared/links" %>
   </div><br>
   <div class="AccountPage__form">
@@ -15,14 +15,14 @@
         <div class="FormField">
           <div class="FormField__label--normal">
             <%= f.label :password %>
-            （英数字で6文字以上）
+            （ minimum: 6, alphabet + numeral )
           </div>
           <div class="FormField__input--normal">
             <%= f.password_field :password, autocomplete: "off" %>
           </div>
         </div><br>
         <div class="actions">
-          <%= f.submit "ログイン", class: 'Button UserButton' %>
+          <%= f.submit "⇩ Login", class: 'Button UserButton' %>
         </div>
       </div>
     <% end %>

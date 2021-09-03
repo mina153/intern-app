@@ -2,7 +2,7 @@
 
   <div class="companies-main">
     <h3 class="companies-title">Edit the information</h3>
-    <%= form_with model: @company , url: user_company_path, local: true do |f| %>
+    <%= form_with model: @company , url: company_path, local: true do |f| %>
   
       <%# 会社名とインターンの説明 %>
       <div class="new-companies">
@@ -48,7 +48,7 @@
       <div class="companies-btn-contents">
         <%= f.submit "⇧ Update" ,class:"company-btn" %>
         <br>
-        <%=link_to '⇨ back to MyPage', user_path(current_user), class:"back-btn" %>
+        <%=link_to '⇨ back to MyPage', companies_path(current_user), class:"back-btn" %>
         <br>
       </div>
       <%# /下部ボタン %>

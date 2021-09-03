@@ -6,5 +6,11 @@ class User < ApplicationRecord
     
   has_many :companies
 
-  validates :name, presence: true
+  validates :name ,presence: true
+
+
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: "is invalid. Include both letters and numbers" 
+
+
 end

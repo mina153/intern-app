@@ -1,10 +1,9 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
-  before_action :move, only: [:show,  :edit, :update, :destroy]
-  before_action :prohibit, only: [:edit, :update, :destroy]
+  before_action :move, only: [ :show, :edit, :update, :destroy]
 
   def index
-    @companies = Company.all.order("created_at DESC")
+    @companies = Company.all.order("date")
   end
 
   def new
@@ -14,7 +13,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-      redirect_to user_companies_path(current_user)
+      redirect_to companies_path(current_user)
     else
       render :new
     end
@@ -29,7 +28,7 @@ class CompaniesController < ApplicationController
 
   def update 
     if @company.update(company_params)
-      redirect_to user_companies_path(current_user)
+      redirect_to companies_path(current_user)
     else
       render :edit
     end
@@ -37,7 +36,7 @@ class CompaniesController < ApplicationController
 
   def destroy
     if @company.destroy
-      redirect_to user_path(current_user)
+      redirect_to companies_path(current_user)
     else
       render :show
     end
@@ -47,14 +46,12 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.permit(:company_name, :explanation, :date).merge(user_id: current_user.id)
+    params.require(:company).permit(:company_name, :explanation, :date).merge(user_id: current_user.id)
   end
 
   def move 
     @company = Company.find(params[:id])
   end
 
-  def prohibit
-    redirect_to interns_index_path unless current_user.id == @company.user_id 
-  end
 end
+

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'interns#index'
   # post 'companies/create'
   # resources :users, only: [:show] do
-    resources :companies
+  resources :companies
   # end
- 
+  resources :users, only: :show
 end

@@ -28,15 +28,17 @@
       </table>
 
         
-        <div id="company_id"></div> 
         <div class= edit-destroy>
           <% if user_signed_in? %>  
             <% if current_user== @company.user %>
-              <p><%= link_to "edit 📝", edit_user_company_path(@company.id), method: :get, class: "intern-edit" %></p>
+              <p><%= link_to "edit 📝", edit_company_path(@company.id), method: :get, class: "intern-edit" %></p>
               <p class="or-text">or</p>
-              <p><%= link_to "delete ❌", user_company_path(@company.id), method: :delete, class:"intern-destroy" %></p>
+              <p><%= link_to "delete ❌", company_path(@company.id), method: :delete, class:"intern-destroy" %></p>
+              <br>
+              <%=link_to '⇨ back to MyPage', companies_path(current_user), class:"back-page" %>
+              <br>
             <% end %> 
-         <% end %>       
+          <% end %>       
         </div>
 
   </div>

@@ -3,7 +3,7 @@
 
   <div class="companies-main">
     <h3 class="companies-title">Fill out the company's information</h3>
-    <%= form_with model: @company , url: user_companies_path, local: true do |f| %>
+    <%= form_with model: @company , local: true do |f| %>
   
       <%# 会社名とインターンの説明 %>
       <div class="new-companies">
@@ -49,13 +49,11 @@
       <div class="companies-btn-contents">
         <%= f.submit "+ Make Plan" ,class:"company-btn" %>
         <br>
-        <%=link_to '⇨ back to MyPage', user_path(current_user), class:"back-btn" %>
+        <%=link_to '⇨ back to MyPage', companies_path(current_user), class:"back-btn" %>
         <br>
       </div>
       <%# /下部ボタン %>
     
-    
-
     <% end %>
   </div>
 </div>

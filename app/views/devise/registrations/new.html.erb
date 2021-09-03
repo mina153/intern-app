@@ -1,6 +1,6 @@
 <div class="AccountPage">
   <div class="AccountPage__title">
-    <h1>新規ユーザー登録</h1>
+    <h1>New Registration</h1>
     <%= render "devise/shared/links" %><br>
   </div>
   <div class="AccountPage__form">
@@ -25,7 +25,7 @@
       <div class="FormField">
         <div class="FormField__label--normal">
           <%= f.label :password %>
-          （英数字で6文字以上）
+          （ minimum: 6, alphabet + numeral )
         </div>
         <div class="FormField__input--normal">
           <%= f.password_field :password, autocomplete: "off" %>
@@ -33,14 +33,14 @@
       </div>
       <div class="FormField">
         <div class="FormField__label--normal">
-          <%= f.label :password（確認用） %>
+          <%= f.label :password（confirmation） %>
         </div>
         <div class="FormField__input--normal">
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
       </div><br>
       <div class="actions">
-        <%= f.submit "新規登録" %>
+        <%= f.submit "+++ New Registration" %>
       </div>
     <% end %>
   </div>

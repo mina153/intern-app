@@ -1,5 +1,6 @@
 ul{
   list-style: none;
+
 }
 
 .list{
@@ -8,6 +9,7 @@ ul{
 }
 .company-date{
   border:1px solid black;
+  padding: 15px;
 }
 .entry_form{
   margin-top: 50px;
@@ -38,4 +40,18 @@ h2{
   background-color: white;
   border: 1px solid black;
   padding: 3px;
+}
+
+.more_list{
+  margin: 15px 0;
+}
+
+.company-name{
+  margin-left: 15px;
+}
+
+h6{
+  font-size: 30px;
+  margin: 50px 10px 10px;
+  
 }
