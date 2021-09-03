@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  # get 'companies/new'
+  # get 'interns/index'
+  devise_for :users
+  # get 'interns/index'
+  root to: 'interns#index'
+  # post 'companies/create'
+  # resources :users, only: [:show] do
+  resources :companies
+  # end
+  resources :users, only: :show
 end

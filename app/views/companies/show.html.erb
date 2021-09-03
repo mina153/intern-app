@@ -1,0 +1,50 @@
+<%# インターンの概要 %>
+<div class="intern-show">
+  <div class="intern-box">
+    <div class= "information-header">
+      <h4>Information Of Internship</h4>
+    </div><br>
+    <h5 class="intern">
+        <div class = company-name-head><%= @company.company_name %></div>
+    </h5>
+       
+          
+         
+     
+    
+      <table class="detail-table">
+        <tbody>
+          <th class="detail-intern">company's name</th>
+          <td class="detail-value"><%= @company.company_name %></td>
+          <tr>
+            <th class="detail-intern">internship's explanation</th>
+            <td class="detail-value"><%= @company.explanation %></td>
+          </tr>
+          <tr>
+            <th class="detail-intern">date of internship</th>
+            <td class="detail-value"><%= @company.date %></td>
+          </tr>
+          <tr>
+            <th class="detail-intern">company's URL</th>
+            <td class="detail-value"><%= @company.url %></td>
+          </tr>
+        </tbody>
+      </table>
+
+        
+        <div class= edit-destroy>
+          <% if user_signed_in? %>  
+            <% if current_user== @company.user %>
+              <p><%= link_to "edit 📝", edit_company_path(@company.id), method: :get, class: "intern-edit" %></p>
+              <p class="or-text">or</p>
+              <p><%= link_to "delete ❌", company_path(@company.id), method: :delete, class:"intern-destroy" %></p>
+              <br>
+              <%=link_to '⇨ back to MyPage', companies_path(current_user), class:"back-page" %>
+              <br>
+            <% end %> 
+          <% end %>       
+        </div>
+
+  </div>
+</div>
+<%# /インターンの概要 %>

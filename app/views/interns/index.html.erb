@@ -1,0 +1,17 @@
+<div class = "check">
+    <% if user_signed_in? %> 
+      <%= link_to '🏄🏼 Go to MyPage 🏄🏼‍♂️ ',companies_path(current_user)%>
+    <% else %>
+      <ul>
+        <li><%= link_to '⇩ ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '⇩ 新規登録', new_user_registration_path, class: "sign-up" %></li>
+      </ul>
+    <% end %>
+</div>
+<div class="content">
+  <b>Welcome back to intern app</b>
+</div>
+
+<div class = 'item'>
+  <%= image_tag "intern-intro02.png", class:"list-pict" %>
+</div>

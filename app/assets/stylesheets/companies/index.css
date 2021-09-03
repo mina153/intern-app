@@ -1,0 +1,55 @@
+ul{
+  list-style: none;
+}
+
+.list{
+  border: 1px solid black;
+  width: 70%;
+}
+.company-date{
+  border:1px solid black;
+  padding: 15px;
+}
+.entry_form{
+  margin-top: 50px;
+}
+
+.logout{
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+
+h2{
+  margin-bottom: 50px;
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+
+}
+
+.login{
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.sign-up{
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.more_list{
+  margin: 15px 0;
+}
+
+.company-name{
+  margin-left: 15px;
+}
+
+h6{
+  font-size: 25px;
+  margin: 50px 10px 10px;
+}

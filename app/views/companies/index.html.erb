@@ -1,0 +1,69 @@
+<div class="AccountPage">
+  <div class="Account__info">
+   
+      <h1>MyPage </h1>
+    
+  </div>
+ 
+  <div class='intern-contents'>
+    <div class="Company__info">
+      <h6> <<< Check <b><%= link_to current_user.name, "#" %></b>'s plan >>> </h6>
+
+    </div>
+   
+ 
+        <% @companies.each do |company| %>
+          <ul>
+            <li class='list'> 
+
+                      <div class='intern-info'>
+                        <h3 class='company-name'>
+                          <%= company.company_name %>    
+                        </h3>
+
+                        
+                        <ul class="more_list">
+                          <% if user_signed_in? %>   
+                            <% if current_user== company.user %>            
+                              <li>
+                                <%= link_to 'detail 👀', company_path(company.id), method: :get %>
+                              </li>
+                              <li> 
+                                <%= link_to 'edit 📝', edit_company_path(company.id), method: :get %>
+                              </li>   
+                              <li>
+                                <%= link_to 'delete ❌', company_path(company.id), method: :delete %>
+                              </li>  
+                            <% end %>
+                          <% end %>
+                        </ul>  
+
+                        <div class='company-date'>
+                          <span><%= company.date %></span> 
+                        </div> 
+                      </div>  
+            </li>
+          </ul>
+        <% end %>    
+
+    <div class="entry_form">
+      <%= link_to ' + New Plan', new_company_path(current_user) %>
+    </div>
+
+  </div>
+  <%# /商品一覧 %>
+
+
+    <div class="Account_link">
+      <% if user_signed_in? %>
+        <br>
+        <%= link_to '⇨ Logout', destroy_user_session_path, method: :delete, class: "logout" %>
+        <br>
+      <% else %>
+        <ul>
+        <li><%= link_to '⇩ Login', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '⇩ New Registration', new_user_registration_path, class: "sign-up" %></li>
+        </ul>
+      <% end %>
+    </div>
+</div>
