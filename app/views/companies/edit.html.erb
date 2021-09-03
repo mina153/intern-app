@@ -4,7 +4,7 @@
     <h3 class="companies-title">Edit the information</h3>
     <%= form_with model: @company , url: company_path, local: true do |f| %>
 
-  
+    <%= render 'layouts/error_messages', model: f.object %>
   
       <%# 会社名とインターンの説明 %>
       <div class="new-companies">

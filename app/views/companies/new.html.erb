@@ -1,11 +1,10 @@
-
 <div class="companies-contents">
 
   <div class="companies-main">
     <h3 class="companies-title">Fill out the company's information</h3>
     <%= form_with model: @company , local: true do |f| %>
     
-    <%# <%= render 'devise/shared/error_messages', model: f.object %> 
+    <%= render 'layouts/error_messages', model: f.object %>
     
       <%# 会社名とインターンの説明 %>
       <div class="new-companies">
