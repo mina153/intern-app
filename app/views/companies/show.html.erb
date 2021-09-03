@@ -1,34 +1,44 @@
 <%# インターンの概要 %>
 <div class="intern-show">
   <div class="intern-box">
-    <h2 class="intern">
-        <%= @company.company_name %>
-    </h2>
-            <div id="company_id"></div> 
-            <% if user_signed_in? %>  
-              <% if current_user== @company.user %>
-                <%= link_to "編集", edit_user_company_path(@company.id), method: :get, class: "intern-red-btn" %>
-                <p class="or-text">or</p>
-                <%= link_to "削除", user_company_path(@company.id), method: :delete, class:"intern-destroy" %>
-              <% end %> 
-            <% end %>  
+    <div class= "information-header">
+      <h4>Information Of Internship</h4>
+    </div><br>
+    <h5 class="intern">
+        <div class = company-name-head><%= @company.company_name %></div>
+    </h5>
+       
+          
          
      
-    <div class="intern-explain-box">
-      <span><%= @company.company_name %></span>
-    </div>
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-intern">internship's explanation</th>
-          <td class="detail-value"><%= @company.explanation %></td>
-        </tr>
-        <tr>
-          <th class="detail-intern">date of internship</th>
-          <td class="detail-value"><%= @company.date %></td>
-        </tr>
-      </tbody>
-    </table>
+    
+      <table class="detail-table">
+        <tbody>
+          <th class="detail-intern">company's name</th>
+          <td class="detail-value"><%= @company.company_name %></td>
+          <tr>
+            <th class="detail-intern">internship's explanation</th>
+            <td class="detail-value"><%= @company.explanation %></td>
+          </tr>
+          <tr>
+            <th class="detail-intern">date of internship</th>
+            <td class="detail-value"><%= @company.date %></td>
+          </tr>
+        </tbody>
+      </table>
+
+        
+        <div id="company_id"></div> 
+        <div class= edit-destroy>
+          <% if user_signed_in? %>  
+            <% if current_user== @company.user %>
+              <p><%= link_to "edit 📝", edit_user_company_path(@company.id), method: :get, class: "intern-edit" %></p>
+              <p class="or-text">or</p>
+              <p><%= link_to "delete ❌", user_company_path(@company.id), method: :delete, class:"intern-destroy" %></p>
+            <% end %> 
+         <% end %>       
+        </div>
+
   </div>
 </div>
 <%# /インターンの概要 %>

@@ -1,0 +1,61 @@
+.intern{
+
+}
+
+.or-text{
+ margin: 0 30px;
+}
+
+.intern-edit{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.intern-destroy{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+div p{
+  display: inline-block;
+}
+
+.company-name-head{
+  text-align: center;
+  font-weight: 700;
+  font-size: large;
+}
+
+.edit-destroy{
+  text-align: center;
+}
+
+.detail-table {
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.detail-intern {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+
+h4{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
