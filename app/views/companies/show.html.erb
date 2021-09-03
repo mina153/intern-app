@@ -2,35 +2,33 @@
 <div class="intern-show">
   <div class="intern-box">
     <h2 class="intern">
-        <%= @companies.company_name %>
+        <%= @company.company_name %>
     </h2>
-
+            <div id="company_id"></div> 
             <% if user_signed_in? %>  
-              <% if current_user== @companies.user %>
-                <%= link_to "編集", edit_user_company_path(@companies.id), method: :get, class: "intern-red-btn" %>
+              <% if current_user== @company.user %>
+                <%= link_to "編集", edit_user_company_path(@company.id), method: :get, class: "intern-red-btn" %>
                 <p class="or-text">or</p>
-                <%= link_to "削除", user_company_path(@companies.id), method: :delete, class:"intern-destroy" %>
+                <%= link_to "削除", user_company_path(@company.id), method: :delete, class:"intern-destroy" %>
               <% end %> 
             <% end %>  
          
      
     <div class="intern-explain-box">
-      <span><%= @companies.company_name %></span>
+      <span><%= @company.company_name %></span>
     </div>
     <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-intern">internship's explanation</th>
-          <td class="detail-value"><%= @companies.explanation %></td>
+          <td class="detail-value"><%= @company.explanation %></td>
         </tr>
         <tr>
           <th class="detail-intern">date of internship</th>
-          <td class="detail-value"><%= @companies.date.name %></td>
+          <td class="detail-value"><%= @company.date %></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <%# /インターンの概要 %>
-
-  
 </div>
+<%# /インターンの概要 %>

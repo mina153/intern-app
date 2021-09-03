@@ -19,29 +19,32 @@
           <ul>
             <li class='list'> 
          
-              <%# <ul class="more_list">
-                <li>
-                  <%= link_to '詳細', user_company_path(company.id), method: :get %>
-                <%# </li>
-                <% if user_signed_in? %>  
-                  <%# <% if current_user== company.user %>
-                    <%# <li> %>
-                      <%# <%= link_to '編集', edit_user_company_path(company.id), method: :get
-                    </li> %> 
-                    <%# <li>
-                      <%= link_to '削除', user_company_path(company.id), method: :delete %>
-                    <%# </li> %>
-                  <%# <% end %>  
-                <%# <% end %>
-              <%# </ul> %> 
-              <%# <%= link_to user_company_path(company.id) do %> 
-           
+       
+                 
+              <%# <%= link_to user_company_path(company.id) do %>   
+             
             
                       <div class='intern-info'>
                         <h3 class='company-name'>
                           <%= company.company_name %>    
-                      
                         </h3>
+
+                        <div id="company_id"></div> 
+                        <ul class="more_list">
+                          <li>
+                            <%= link_to '詳細', user_company_path(company.id), method: :get %>
+                          </li>
+                          <% if user_signed_in? %>   
+                            <% if current_user== company.user %>
+                              <li> 
+                                <%= link_to '編集', edit_user_company_path(company.id), method: :get %>
+                              </li>   
+                              <li>
+                                <%= link_to '削除', user_company_path(company.id), method: :delete %>
+                              </li>  
+                            <% end %>
+                          <% end %>
+                        </ul>  
 
                         <div class='company-date'>
                           <span><%= company.date %></span> 
@@ -72,9 +75,3 @@
       <% end %>
     </div>
 </div>
-
-
-
-
-      
-  
