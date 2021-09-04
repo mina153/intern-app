@@ -1,6 +1,4 @@
-.intern{
 
-}
 
 .or-text{
  margin: 0 30px;
@@ -34,6 +32,7 @@ div p{
 .detail-table {
   margin-bottom: 30px;
   width: 90%;
+  
 }
 
 .detail-intern {
@@ -65,4 +64,8 @@ h4{
   background-color: white;
   border: 1px solid black;
   padding: 3px;
+}
+
+table{
+  margin: 0 auto
 }
