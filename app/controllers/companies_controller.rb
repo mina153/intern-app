@@ -46,7 +46,7 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:company_name, :explanation, :date, :url).merge(user_id: current_user.id)
+    params.require(:company).permit(:company_name, :explanation, :date, :url, :intern_day_id).merge(user_id: current_user.id)
   end
 
   def move 

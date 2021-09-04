@@ -39,13 +39,15 @@
                         </ul>  
 
                         <div class='company-date'>
-                          <span><%= company.date %></span> 
+                          <span><%= company.date %> ( <%= company.intern_day.name%>day )</span> 
                         </div> 
+                         
                       </div>  
             </li>
           </ul>
         <% end %>    
 
+      
     <div class="entry_form">
       <%= link_to ' + New Plan', new_company_path(current_user) %>
     </div>

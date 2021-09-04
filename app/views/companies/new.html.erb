@@ -30,25 +30,30 @@
       <%# /会社名とインターンの説明 %>
 
       <%# インターンの日程 %>
+
+   
       <div class="intern-date">
         <strong><label class="weight-bold-text">date of internship</label></strong>
         <span class="indispensable">  neccesary  </span>
       </div>
-      <div class='input-birth-wrap'>
-        <%= raw sprintf(
-                    f.date_select(
-                      :date,
-                      class:'select-date',
-                      id:"date",
-                      use_month_numbers: true,
-                      prompt:'--',
-                      start_year: 2021,
-                      end_year: (Time.now.year + 10 ),
-                      date_separator: '%s'),
-                    "<p> year </p>", "<p> month </p>") + "<p> th </p>" %>
-      </div>
-
-      
+      <div class ="date-form">
+        <div class='input-birth-wrap'>
+          <%= raw sprintf(
+                      f.date_select(
+                        :date,
+                        class:'select-date',
+                        id:"date",
+                        use_month_numbers: true,
+                        prompt:'--',
+                        start_year: 2021,
+                        end_year: (Time.now.year + 10 ),
+                        date_separator: '%s'),
+                      "<p> year </p>", "<p> month </p>") + "<p> th </p>" %>
+        </div>
+        <div class = "input-intern-day">
+          <%= f.collection_select(:intern_day_id, InternDay.all, :id, :name, {}, {class:"select-box", id:"intern-day"}) %><p>day<p>
+        </div>
+    </div>
       
       <%# /商品の詳細 %>
 

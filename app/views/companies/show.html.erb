@@ -11,18 +11,17 @@
           
          
      
-    
       <table class="detail-table">
         <tbody>
           <th class="detail-intern">company's name</th>
           <td class="detail-value"><%= @company.company_name %></td>
           <tr>
-            <th class="detail-intern">internship's explanation</th>
-            <td class="detail-value"><%= @company.explanation %></td>
+            <th class="detail-intern">date of internship</th>
+            <td class="detail-value"><%= @company.date%> ( <%= @company.intern_day.name %>day )</td>
           </tr>
           <tr>
-            <th class="detail-intern">date of internship</th>
-            <td class="detail-value"><%= @company.date %></td>
+            <th class="detail-intern">internship's explanation</th>
+            <td class="detail-value"><%= @company.explanation %></td>
           </tr>
           <tr>
             <th class="detail-intern">company's URL</th>
@@ -30,7 +29,7 @@
           </tr>
         </tbody>
       </table>
-
+   
         
         <div class= edit-destroy>
           <% if user_signed_in? %>  
